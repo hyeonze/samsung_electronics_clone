@@ -1,0 +1,28 @@
+/* sub2.css */
+/* container */
+/* spot */
+.spot{background:url(../images/faq_visual_img.jpg) no-repeat 50% 0;color: #fff;}
+.spot_inner > h2{font-size: 50px;margin-bottom: 10px;color: #fff;}
+.spot_inner > p{font-size: 16px;color: #eee;}
+.spot_inner > p.path{text-align: right;font-size: 14px;color:#ccc;padding-top:90px;}
+
+/* content */
+p.info_txt{text-align: right;margin-bottom: 10px;}
+
+table.job{width: 100%;margin-bottom: 60px;}
+.job thead th{height: 60px;border: 1px solid #ccc;border-top: 1px solid #000;
+    background-color: #f3f3f3;text-align: center;font-size: 18px;}
+.job thead th:first-of-type{width: 120px;border-left: none;}
+.job thead th:nth-of-type(2){width: 640px;}
+.job thead th:last-of-type{width: 380px;border-right: none;}
+
+.job tbody td{height: 60px;border:1px solid #ccc;text-align: center;}
+.job tbody td:first-of-type{border-left: none;}
+.job tbody td:last-of-type{border-right: none;}
+.job tbody tr:last-of-type td{border-bottom: 1px solid #000;}
+
+/* FAQ더보기 */
+.faq{width: 100%;border: 1px solid #ccc;padding:0 20px;box-sizing: border-box; margin-bottom: 60px;}
+.faq > p{display: inline-block;width: 930px; font-size: 16px;line-height: 90px;}
+.faq > a{display: inline-block;color: #fff;font-size: 16px;width: 160px;height: 45px;line-height: 45px;
+    background: #043285 url(../images/btn_arrow_ico_w.png) no-repeat 90% 50%;text-align: center;}

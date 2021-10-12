@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>full down 풀다운 메뉴</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{font-family: "돋움",dotum,sans-serif;font-size: 12px;color:#000;}
+li{list-style: none;}
+img{border:0;vertical-align: top;}
+a{color: #fff;text-decoration: none;}
+
+header{position:relative;width: 100%;height: 30px;background: #000;}
+.header_wrap{position: absolute;left:0;top:0;width: 100%;height:30px;
+    border-bottom: 2px solid #ccc;background: rgba(0,0,0,.5);}
+.header_inner{position: relative;width: 620px;margin:0 auto;}
+nav > ul{width: 100%;}
+nav > ul:after{content: "";display: block;clear: both;}
+nav > ul > li{float: left;width: 120px;text-align: center;line-height: 30px;}
+nav > ul > li > ul{display: none; position: absolute;left:0;top:30px;width: 110px;padding:5px;}/*inner 기준*/
+nav > ul > li:first-child > ul{left:0;}
+nav > ul > li:nth-child(2) > ul{left:120px;}
+nav > ul > li:nth-child(3) > ul{left:240px;}
+nav > ul > li:nth-child(4) > ul{left:360px;}
+nav > ul > li:last-child > ul{left:480px;}
+
+nav > ul > li > a{position:relative;display: inline-block;width: 100%;}
+nav > ul > li > a:after{content: "";opacity: 0; position: absolute;left:50%;bottom: 0;
+    width: 0;height: 0;background: yellow;transform: translate(-50%,0);
+    transition: width .4s ease-in-out;}
+nav > ul > li.on > a:after{opacity: 1;width: 100%;height: 3px;}
+</style>
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("nav>ul>li>a").bind("mouseover focus",function(){
+            $(".header_wrap").animate({"height":"200px"},300);
+            $("nav>ul>li>ul").css("display","none");
+            $(this).next().css("display","block");
+            $("nav > ul > li").removeClass("on");
+            $(this).parent().addClass("on");
+        });
+        $("nav").bind("mouseleave blur",function(){
+            $(".header_wrap").animate({"height":"30px"},300,function(){
+                $("nav>ul>li>ul").css("display","none");
+                $("nav > ul > li").removeClass("on");
+            });
+        });
+    });
+    // JavaScript
+    // li = document.getElementById("");
+    // for(var i = 0; i < li.length; i++){
+    //     li.children[0].onmouseover = li.children[0].onfocus = function(){
+
+    //     }
+    // }
+</script>
+</head>
+<body>
+<header><!-- w:100%, p:r -->
+    <div class="header_wrap"><!-- w:100%, p:a (내려오는부분)-->
+        <div class="header_inner"><!-- m:0 auto (내용물)-->
+            <h1></h1>
+            <dl></dl>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#">메뉴1</a>
+                        <ul>
+                            <li><a href="#">메뉴1-1</a></li>
+                            <li><a href="#">메뉴1-2</a></li>
+                            <li><a href="#">메뉴1-3</a></li>
+                            <li><a href="#">메뉴1-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul>
+                            <li><a href="#">메뉴2-1</a></li>
+                            <li><a href="#">메뉴2-2</a></li>
+                            <li><a href="#">메뉴2-3</a></li>
+                            <li><a href="#">메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul>
+                            <li><a href="#">메뉴3-1</a></li>
+                            <li><a href="#">메뉴3-2</a></li>
+                            <li><a href="#">메뉴3-3</a></li>
+                            <li><a href="#">메뉴3-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴4</a>
+                        <ul>
+                            <li><a href="#">메뉴4-1</a></li>
+                            <li><a href="#">메뉴4-2</a></li>
+                            <li><a href="#">메뉴4-3</a></li>
+                            <li><a href="#">메뉴4-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴5</a>
+                        <ul>
+                            <li><a href="#">메뉴5-1</a></li>
+                            <li><a href="#">메뉴5-2</a></li>
+                            <li><a href="#">메뉴5-3</a></li>
+                            <li><a href="#">메뉴5-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</body>
+</html>
